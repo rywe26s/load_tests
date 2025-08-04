@@ -140,7 +140,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
           <stringProp name="IfController.condition">${__groovy(System.currentTimeMillis() &gt; vars.get(&quot;tokenExpiryTime&quot;) as Long)}</stringProp>
           <boolProp name="IfController.evaluateAll">false</boolProp>
           <boolProp name="IfController.useExpression">true</boolProp>
@@ -529,7 +529,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
@@ -538,7 +538,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="JSON JMESPath Extractor" enabled="true">
+          <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="JSON JMESPath Extractor">
             <stringProp name="JMESExtractor.referenceName">uploadedFileUid</stringProp>
             <stringProp name="JMESExtractor.jmesPathExpr">[0].uid</stringProp>
             <stringProp name="JMESExtractor.matchNumber"></stringProp>
@@ -546,7 +546,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
           </JMESPathExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Add analysis" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Add analysis">
           <stringProp name="HTTPSampler.domain">${server}</stringProp>
           <stringProp name="HTTPSampler.port">${port}</stringProp>
           <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
@@ -568,8 +568,8 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
   &quot;externalLinks&quot;: [],&#xd;
   &quot;date&quot;: &quot;2025-08-04&quot;,&#xd;
   &quot;source&quot;: &quot;EHR&quot;,&#xd;
-  &quot;name&quot;: &quot;Автотест анализ&quot;,&#xd;
-  &quot;description&quot;: &quot;Автотест комментарий&quot;,&#xd;
+  &quot;name&quot;: &quot;Автотест анализ2&quot;,&#xd;
+  &quot;description&quot;: &quot;Автотест комментарий2&quot;,&#xd;
   &quot;patientReason&quot;: &quot;-&quot;,&#xd;
   &quot;doctorReason&quot;: &quot;-&quot;&#xd;
 }</stringProp>
@@ -579,7 +579,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
@@ -593,7 +593,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
