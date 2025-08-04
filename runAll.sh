@@ -6,8 +6,8 @@ SCENARIOS_DIR="scenarios"
 RESULTS_DIR="results"
 REPORT_DIR="report"
 
-START_DATE="$START_DATE"
-END_DATE="$END_DATE"
+START_DATE="$1"
+END_DATE="$2"
 
 echo "Запуск тестов с параметрами:"
 echo "START_DATE=$START_DATE"
