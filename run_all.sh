@@ -23,7 +23,7 @@ for scenario in "$SCENARIOS_DIR"/*.jmx; do
   jtlFile="$RESULTS_DIR/$scenarioName.jtl"
   htmlReportDir="$REPORT_DIR/$scenarioName"
 
-  echo "Запуск: $scenarioName"
+  echo "Запуск сценария: $scenarioName"
 
   jmeter -n -t "$scenario" \
          -l "$jtlFile" \
@@ -36,4 +36,4 @@ for scenario in "$SCENARIOS_DIR"/*.jmx; do
   jmeter -g "$jtlFile" -o "$htmlReportDir"
 done
 
-echo "Все тесты завершены. Отчеты: $REPORT_DIR"
+echo "Все тесты завершены. Отчеты в папке: $REPORT_DIR"
