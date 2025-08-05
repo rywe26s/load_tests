@@ -65,7 +65,7 @@
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config">
           <stringProp name="delimiter">,</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="filename">config/users.csv</stringProp>
+          <stringProp name="filename">${__P(CONFIG_DIR)}/users.csv</stringProp>
           <boolProp name="ignoreFirstLine">false</boolProp>
           <boolProp name="quotedData">false</boolProp>
           <boolProp name="recycle">true</boolProp>
@@ -74,13 +74,13 @@
           <stringProp name="variableNames"></stringProp>
         </CSVDataSet>
         <hashTree/>
-        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager">
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
           <collectionProp name="CookieManager.cookies"/>
           <boolProp name="CookieManager.clearEachIteration">false</boolProp>
           <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
         </CookieManager>
         <hashTree/>
-        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller">
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="Once Only Controller" enabled="true">
           <stringProp name="TestPlan.comments">делаем авторизаю 1 раз на поток</stringProp>
         </OnceOnlyController>
         <hashTree>
@@ -140,7 +140,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller">
+        <IfController guiclass="IfControllerPanel" testclass="IfController" testname="If Controller" enabled="true">
           <stringProp name="IfController.condition">${__groovy(System.currentTimeMillis() &gt; vars.get(&quot;tokenExpiryTime&quot;) as Long)}</stringProp>
           <boolProp name="IfController.evaluateAll">false</boolProp>
           <boolProp name="IfController.useExpression">true</boolProp>
@@ -494,9 +494,9 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
           <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
           <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
             <collectionProp name="HTTPFileArgs.files">
-              <elementProp name="test_data/image.jpg" elementType="HTTPFileArg">
+              <elementProp name="${__P(TEST_DATA_DIR)}/image.jpg" elementType="HTTPFileArg">
                 <stringProp name="File.mimetype">image/jpeg</stringProp>
-                <stringProp name="File.path">test_data/image.jpg</stringProp>
+                <stringProp name="File.path">${__P(TEST_DATA_DIR)}/image.jpg</stringProp>
                 <stringProp name="File.paramname">files</stringProp>
               </elementProp>
             </collectionProp>
@@ -529,7 +529,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Authorization</stringProp>
@@ -538,7 +538,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
-          <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="JSON JMESPath Extractor">
+          <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="JSON JMESPath Extractor" enabled="true">
             <stringProp name="JMESExtractor.referenceName">uploadedFileUid</stringProp>
             <stringProp name="JMESExtractor.jmesPathExpr">[0].uid</stringProp>
             <stringProp name="JMESExtractor.matchNumber"></stringProp>
@@ -579,7 +579,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree>
-          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
             <collectionProp name="HeaderManager.headers">
               <elementProp name="" elementType="Header">
                 <stringProp name="Header.name">Content-Type</stringProp>
@@ -593,7 +593,7 @@ vars.put(&quot;tokenExpiryTime&quot;, expiryTime.toString())</stringProp>
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler">
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
           <boolProp name="displayJMeterProperties">false</boolProp>
           <boolProp name="displayJMeterVariables">true</boolProp>
           <boolProp name="displaySystemProperties">false</boolProp>
@@ -867,7 +867,7 @@ if (response.contains(&apos;&quot;code&quot; : &quot;SLOT_NOT_FREE&quot;&apos;))
           </HeaderManager>
           <hashTree/>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -904,7 +904,7 @@ if (response.contains(&apos;&quot;code&quot; : &quot;SLOT_NOT_FREE&quot;&apos;))
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ResponseTimesPercentilesGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times Percentiles">
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ResponseTimesPercentilesGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times Percentiles" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -949,7 +949,7 @@ if (response.contains(&apos;&quot;code&quot; : &quot;SLOT_NOT_FREE&quot;&apos;))
           <boolProp name="exclude_checkbox_state">false</boolProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
-        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second">
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -994,7 +994,7 @@ if (response.contains(&apos;&quot;code&quot; : &quot;SLOT_NOT_FREE&quot;&apos;))
           <boolProp name="exclude_checkbox_state">false</boolProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
-        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time">
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -1039,7 +1039,7 @@ if (response.contains(&apos;&quot;code&quot; : &quot;SLOT_NOT_FREE&quot;&apos;))
           <boolProp name="exclude_checkbox_state">false</boolProp>
         </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
