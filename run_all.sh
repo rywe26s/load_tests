@@ -23,7 +23,7 @@ for scenario in "$SCENARIOS_DIR"/*.jmx; do
   jtlFile="$RESULTS_DIR/$scenarioName.jtl"
   htmlReportDir="$REPORT_DIR/$scenarioName"
 
-  echo "Running scenario: $scenarioName"
+  echo "Запуск сценария: $scenarioName"
 
   jmeter -n -t "$scenario" \
          -l "$jtlFile" \
