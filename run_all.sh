@@ -32,7 +32,7 @@ for scenario in "$SCENARIOS_DIR"/*.jmx; do
          -JstartDate="$START_DATE" \
          -JendDate="$END_DATE"
 
-  echo "Генерация отчета: $scenarioName"
+  echo "Генерация отчетf: $scenarioName"
   jmeter -g "$jtlFile" -o "$htmlReportDir"
 done
 
