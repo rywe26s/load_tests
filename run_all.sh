@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sed -i 's/\r$//' "$0"
 set -e
 
 START_DATE="$1"
