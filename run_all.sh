@@ -31,8 +31,7 @@ for scenario in "$SCENARIOS_DIR"/*.jmx; do
   jmeter -n -t "$scenario" \
          -l "$jtlFile" \
          -JstartDate="$START_DATE" \
-         -JendDate="$END_DATE" \
-         -JCONFIG_DIR="config"
+         -JendDate="$END_DATE"
 
   echo "Генерация отчета для: $scenarioName"
   jmeter -g "$jtlFile" -o "$htmlReportDir"
