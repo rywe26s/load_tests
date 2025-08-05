@@ -1,6 +1,5 @@
 #!/bin/bash
 
-sed -i 's/\r$//' "$0"
 set -e
 
 START_DATE="$1"
@@ -18,6 +17,7 @@ echo "END_DATE=$END_DATE"
 rm -rf "$RESULTS_DIR" "$REPORT_DIR"
 mkdir -p "$RESULTS_DIR" "$REPORT_DIR"
 
+
 for scenario in "$SCENARIOS_DIR"/*.jmx; do
   scenarioName=$(basename "$scenario" .jmx)
   jtlFile="$RESULTS_DIR/$scenarioName.jtl"
@@ -32,8 +32,8 @@ for scenario in "$SCENARIOS_DIR"/*.jmx; do
          -JstartDate="$START_DATE" \
          -JendDate="$END_DATE"
 
-  echo "Generating report for: $scenarioName"
+  echo "Генерация отчета: $scenarioName"
   jmeter -g "$jtlFile" -o "$htmlReportDir"
 done
 
-echo "All reports saved to: $REPORT_DIR"
+echo "Все тесты завершены. Отчеты находятся в папке: $REPORT_DIR"
