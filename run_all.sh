@@ -36,4 +36,4 @@ for scenario in "$SCENARIOS_DIR"/*.jmx; do
   jmeter -g "$jtlFile" -o "$htmlReportDir"
 done
 
-echo "Все тесты завершены. Отчеты в папке: $REPORT_DIR"
+echo "Все тесты завершены. Отчеты находятся в папке: $REPORT_DIR"
